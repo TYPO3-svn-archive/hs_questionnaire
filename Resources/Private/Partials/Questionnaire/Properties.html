@@ -1,0 +1,79 @@
+{namespace hsquestionnaire = Tx_HsQuestionnaire_ViewHelpers}
+
+<f:if condition="{questionnaire.image}">
+	<f:image src="uploads/tx_hsquestionnaire/{questionnaire.image}" alt="{questionnaire.image}" />
+</f:if>
+
+<f:if condition="{questionnaire.description}">
+	<div>
+		<hsquestionnaire:htmlsc string="{questionnaire.description}" />
+	</div>
+</f:if>
+
+<f:form action="create" controller="Result" enctype="multipart/form-data" name="newResult" object="{newResult}">
+
+	<f:flashMessages renderMode="div" />
+
+	<f:for each="{questionnaire.questions}" as="question">
+	<div>
+		<div>
+			<div>
+				<small>{question.title}</small>
+				<h2>{question.questionText} <f:if condition="{question.isrequired} == 0"><f:translate key="tx_hsquestionnaire_domain_model_question.optional" /></f:if></h2>
+				<f:if condition="{hsquestionnaire:check(current: '{question.uid}', valArray: '{emptyquestions}')}">
+					<small class="typo3-message message-warning"><f:translate key="tx_hsquestionnaire_domain_model_result.missinganwers" /></small>
+				</f:if>
+			</div>
+
+			<f:if condition="{question.images}">
+				<div>
+					<f:image src="uploads/tx_hsquestionnaire/{question.images}" alt="{question.images}" />
+				</div>
+			</f:if>
+
+			<div>
+				<f:for each="{question.answers}" as="answer">
+					<f:if condition="{question.type}==1">
+						<f:if condition="{hsquestionnaire:check(current: '{answer.uid}', valArray: '{result}')}">
+							<f:then>
+								<f:form.radio name="result[{question.uid}]" value="{answer.uid}" checked="checked" />
+							</f:then>
+							<f:else>
+								<f:form.radio name="result[{question.uid}]" value="{answer.uid}" checked="" />
+							</f:else>
+						</f:if>
+						<label for="result[{question.uid}]">{answer.title}</label>
+					</f:if>
+					<f:if condition="{question.type}==2">
+						<f:if condition="{hsquestionnaire:check(current: '{answer.uid}', valArray: '{result}')}">
+							<f:then>
+								<f:form.checkbox class="awcheckbox{question.uid}" name="result[{question.uid}][]" value="{answer.uid}" checked="checked" />
+							</f:then>
+							<f:else>
+								<f:form.checkbox class="awcheckbox{question.uid}" name="result[{question.uid}][]" value="{answer.uid}" />
+							</f:else>
+						</f:if>
+						<label for="result[{question.uid}]">{answer.title}</label>
+					</f:if>
+					<f:if condition="{question.type}==3">
+						<label for="result[{question.uid}]">{answer.title}</label>
+						<f:form.textfield name="result[{question.uid}]" value="" />
+					</f:if>
+				</f:for>
+
+				<script>
+					<![CDATA[ function countChecked() {
+						var n = $(".awcheckbox]]>{question.uid}<![CDATA[:checked").length;
+						if(n > ]]>{question.maxAnswerCount}<![CDATA[) { alert('Sie dürfen maximal ]]>{question.maxAnswerCount}<![CDATA[ Antworten auswählen.');return false; }
+					}
+					countChecked();
+					$(".awcheckbox]]>{question.uid}<![CDATA[").click(countChecked); ]]>
+				</script>
+			</div>
+		</div>
+	</div>
+	</f:for>
+
+	<f:form.hidden name="qid" value="{questionnaire.uid}" />
+	<div id="keq_next"><f:form.submit value="Fragebogen absenden" /></div>
+</f:form>

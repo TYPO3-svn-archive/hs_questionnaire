@@ -1,0 +1,64 @@
+plugin.tx_hsquestionnaire {
+	view {
+		templateRootPath = {$plugin.tx_hsquestionnaire.view.templateRootPath}
+		partialRootPath = {$plugin.tx_hsquestionnaire.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_hsquestionnaire.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_hsquestionnaire.persistence.storagePid}
+	}
+
+	settings {
+
+		certificate {
+
+			detailPid = {$plugin.tx_hsquestionnaire.settings.certificate.detailPid}
+
+			imageResolution = {$plugin.tx_hsquestionnaire.settings.certificate.imageResolution}
+
+			tempFolder = {$plugin.tx_hsquestionnaire.settings.certificate.tempFolder}
+
+			email {
+
+				from = {$plugin.tx_hsquestionnaire.settings.certificate.email.from}
+			}
+
+		}
+
+		invite {
+			email {
+				from = {$plugin.tx_hsquestionnaire.settings.invite.email.from}
+			}
+		}
+	}
+}
+
+
+ # Module configuration
+module.tx_hsquestionnaire {
+	persistence {
+		storagePid = {$module.tx_hsquestionnaire.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_hsquestionnaire.view.templateRootPath}
+		partialRootPath = {$module.tx_hsquestionnaire.view.partialRootPath}
+		layoutRootPath = {$module.tx_hsquestionnaire.view.layoutRootPath}
+	}
+
+	settings {
+
+		reporting {
+
+			tempFolder = {$plugin.tx_hsquestionnaire.settings.reporting.tempFolder}
+
+			email {
+
+				from = {$plugin.tx_hsquestionnaire.settings.reporting.email.from}
+
+				to = {$plugin.tx_hsquestionnaire.settings.reporting.email.to}
+			}
+
+			excludedGroups = {$plugin.tx_hsquestionnaire.settings.reporting.excludedGroups}
+		}
+	}
+}

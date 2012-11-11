@@ -1,0 +1,22 @@
+<label for="inviteon">
+	<f:translate key="tx_hsquestionnaire_domain_model_invite.inviteon" />
+</label><br />
+	<f:form.textfield property="inviteon"  value="{invite.inviteon->f:format.date()}" /><br />
+<label for="invitecode">
+	<f:translate key="tx_hsquestionnaire_domain_model_invite.invitecode" />
+</label><br />
+	<f:form.textfield property="invitecode" value="{invitecode}" /><br />
+        
+<label for="questionnaire"><f:translate key="tx_hsquestionnaire_domain_model_invite.questionnaire" /></label><br />
+	<f:form.select property="questionnaire" options="{questionnaires}" optionValueField="uid" optionLabelField="title">            
+            <select><option>dummy</option></select>
+        </f:form.select>        
+<br />
+
+<label for="feuser"><f:translate key="tx_hsquestionnaire_domain_model_invite.feuser" /></label><br />
+	<f:form.select property="feuser" options="{feusers}" optionValueField="uid" optionLabelField="username">
+            <select><option>dummy</option></select>
+        </f:form.select>
+<br />
+
+<f:form.hidden property="fegroup" value="0" />

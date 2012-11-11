@@ -1,0 +1,14 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1>Edit Result</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:form action="update" name="result" object="{result}" >
+<f:render partial="Result/FormFields" arguments="{result:result}" />
+	<f:form.submit value="Save" />
+</f:form>
+</f:section>

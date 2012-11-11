@@ -1,0 +1,29 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+<h1>Listing for Status</h1>
+
+<f:flashMessages />
+
+<table  class="tx_hsquestionnaire" >
+	<tr>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_status.is_aborted" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_status.is_failed" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_status.is_passed" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{statuses}" as="status">
+		<tr>
+			<td><f:link.action action="show" arguments="{status : status}"> {status.isAborted}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{status : status}"> {status.isFailed}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{status : status}"> {status.isPassed}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{status : status}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{status : status}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Status</f:link.action>
+</f:section>

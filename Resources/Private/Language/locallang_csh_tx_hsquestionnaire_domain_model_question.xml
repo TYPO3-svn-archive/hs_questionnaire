@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_hsquestionnaire_domain_model_question</description>
+		<type>CSH</type>
+		<csh_table>tx_hsquestionnaire_domain_model_question</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title.description">Title in Backend</label>
+			<label index="question_text.description">The text of question.</label>
+			<label index="points.description">The points of the question.</label>
+			<label index="max_answer_count.description">Maximum count of answers to be given by participant.</label>
+			<label index="images.description">Add a custom image to the question.</label>
+			<label index="is_random_order.description">Answers displayed in radom order.</label>
+			<label index="is_required.description">Is question need to be answered?</label>
+			<label index="is_passed_required.description">Question need to be answered correctly?</label>
+			<label index="show_if_dependencies.description">Show when question has dependencies?</label>
+			<label index="type.description">The question type.</label>
+			<label index="dependon.description">Dependencies to other questions.</label>
+			<label index="answers.description">The answers of the question.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title.description">Der Titel der Frage, welcher im Backend angezeigt wird.</label>
+			<label index="question_text.description">Die eigentliche Fragestellung der Frage.</label>
+			<label index="points.description">Wie viele Punkt werden für diese Frage gegeben.</label>
+			<label index="max_answer_count.description">Wie viele Antworten dürfen maximal ausgewählt werden.</label>
+			<label index="images.description">Fügt ein benutzerdefiniertes Bild in die Frage ein.</label>
+			<label index="is_random_order.description">Sollen die Antworten in zufälliger Reihenfolge angezeigt werden?</label>
+			<label index="is_required.description">Ist die Frage eine Pflichtfrage und muss beantwortet werden?</label>
+			<label index="is_passed_required.description">Müssen alle richtigen Antworten ausgewählt, dass die Frage als richtig beantwortet gewertet wird?</label>
+			<label index="show_if_dependencies.description">Soll die Frage angezeiugt werden, auch wenn nicht erfüllte Abhängigkeiten bestehen?</label>
+			<label index="type.description">Legt den Typ der Frage fest.</label>
+			<label index="dependon.description">Legt Abhängigkeiten von anderen Fragen fest.</label>
+			<label index="answers.description">Die Antworten dieser Frage.</label>
+		</languageKey>
+	</data>
+</T3locallang>

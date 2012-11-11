@@ -1,0 +1,31 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+<h1>Listing for Answer</h1>
+
+<f:flashMessages />
+
+<table  class="tx_hsquestionnaire" >
+	<tr>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_answer.title" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_answer.description" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_answer.images" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_answer.correct_answer" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{answers}" as="answer">
+		<tr>
+			<td><f:link.action action="show" arguments="{answer : answer}"> {answer.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{answer : answer}"> {answer.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{answer : answer}"> {answer.images}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{answer : answer}"> {answer.correctAnswer}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{answer : answer}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{answer : answer}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Answer</f:link.action>
+</f:section>

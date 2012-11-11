@@ -1,0 +1,27 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+<h1>Listing for Questionnaire</h1>
+
+<f:flashMessages />
+
+<table  class="tx_hsquestionnaire" >
+	<tr>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_questionnaire.title" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_questionnaire.description" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{questionnaires}" as="questionnaire">
+		<tr>
+			<td><f:link.action action="show" arguments="{questionnaire : questionnaire}"> {questionnaire.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{questionnaire : questionnaire}"> {questionnaire.description}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{questionnaire : questionnaire}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{questionnaire : questionnaire}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Questionnaire</f:link.action>
+</f:section>

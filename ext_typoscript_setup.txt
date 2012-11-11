@@ -1,0 +1,33 @@
+config.tx_extbase{
+	persistence{
+		classes{
+
+			Tx_Extbase_Domain_Model_FrontendUser {
+				subclasses {
+					Tx_HsQuestionnaire_Feuser = Tx_HsQuestionnaire_Domain_Model_Feuser
+
+				}
+			}
+
+			Tx_HsQuestionnaire_Domain_Model_Feuser {
+				mapping {
+					tableName = fe_users
+				}
+			}
+
+
+			Tx_Extbase_Domain_Model_FrontendUserGroup {
+				subclasses {
+					Tx_HsQuestionnaire_Fegroup = Tx_HsQuestionnaire_Domain_Model_Fegroup
+
+				}
+			}
+
+			Tx_HsQuestionnaire_Domain_Model_Fegroup {
+				mapping {
+					tableName = fe_groups
+				}
+			}
+		}
+	}
+}

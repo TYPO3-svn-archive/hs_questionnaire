@@ -1,0 +1,43 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+<h1>Listing for Question</h1>
+
+<f:flashMessages />
+
+<table  class="tx_hsquestionnaire" >
+	<tr>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.title" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.question_text" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.points" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.max_answer_count" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.images" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.is_random_order" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.is_required" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.is_passed_required" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.show_if_dependencies" /></th>
+		<th><f:translate key="tx_hsquestionnaire_domain_model_question.type" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{questions}" as="question">
+		<tr>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.questionText}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.points}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.maxAnswerCount}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.images}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.isRandomOrder}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.isRequired}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.isPassedRequired}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.showIfDependencies}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.type}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{question : question}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{question : question}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Question</f:link.action>
+</f:section>

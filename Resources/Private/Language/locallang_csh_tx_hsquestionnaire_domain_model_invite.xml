@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_hsquestionnaire_domain_model_invite</description>
+		<type>CSH</type>
+		<csh_table>tx_hsquestionnaire_domain_model_invite</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="inviteon.description">inviteon</label>
+			<label index="invitecode.description">invitecode</label>
+			<label index="questionnaire.description">The questionnaire of the invite.</label>
+			<label index="feuser.description">The feuser of the invite.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="inviteon.description">Das Datum, an dem der Teilnehmer eingeladen wurde.</label>
+			<label index="invitecode.description">Der InviteCode welcher dem Benutzer authentifiziert.</label>
+			<label index="questionnaire.description">Der Fragebogen, für den der InviteCode gilt.</label>
+			<label index="feuser.description">Der Benutzer, für den der InviteCode gilt.</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,12 @@
+<label for="ip">
+	<f:translate key="tx_hsquestionnaire_domain_model_result.ip" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="ip" /><br />
+<label for="score">
+	<f:translate key="tx_hsquestionnaire_domain_model_result.score" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="score" /><br />
+<label for="finished">
+	<f:translate key="tx_hsquestionnaire_domain_model_result.finished" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="finished"  value="{result.finished->f:format.date()}" /><br />

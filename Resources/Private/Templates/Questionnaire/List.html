@@ -1,0 +1,43 @@
+{namespace hsquestionnaire = Tx_HsQuestionnaire_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages renderMode="div" />
+
+<div class="tx_hsquestionnaire" >
+	<section class="tx_hsquestionnaire-questionnairelist">
+		<p><f:translate key="tx_hsquestionnaire_domain_model_questionnaire.questionnairelist" /></p>
+		<f:for each="{questionnaires}" as="questionnaire">
+			<f:if condition="{hsquestionnaire:invite(current: '{questionnaire.uid}', valArray: '{userinvites}')}">
+				<section>
+					<h3><f:link.action action="show" arguments="{questionnaire : questionnaire}"> {questionnaire.title}</f:link.action></h3>
+					<p><small>{questionnaire.description}</small></p>
+				</section>
+			</f:if>
+		</f:for>
+	</section>
+
+	<f:if condition="{results}">
+		<section class="tx_hsquestionnaire-resultlist">
+			<p><f:translate key="tx_hsquestionnaire_domain_model_questionnaire.resultlist" /></p>
+			<ul>
+				<f:for each="{results}" as="result">
+					<li><strong>{result.questionnaire.certificate.title}:</strong>
+						<f:if condition="{result.status.isPassed}==1">
+							<f:link.action action="download" controller="Pdf" arguments="{questionnaire:questionnaire}">{f:translate(key: 'resultlist_download')}</f:link.action>
+						</f:if>
+						<f:if condition="{result.status.isFailed}==1">
+							<f:translate key="tx_hsquestionnaire_domain_model_certificate.failed" />
+						</f:if>
+						<f:if condition="{result.status.isAborted}==1">
+							<f:translate key="tx_hsquestionnaire_domain_model_certificate.abort" />
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</section>
+	</f:if>
+</div>
+</f:section>

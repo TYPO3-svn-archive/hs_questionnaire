@@ -1,0 +1,24 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<h2><f:translate key="tx_hsquestionnaire_domain_model_questionnaire.questionnairelist" /></h2>
+
+	<div class="tx_hsquestionnaire" >
+		<table>
+			<f:for each="{results}" as="result">
+				<tr>
+					<td>{result.questionnaire.title}</td>
+					<td>
+						<f:if condition="{result.status.isPassed}==1">
+							<f:translate key="tx_hsquestionnaire_domain_model_status.is_passed" />
+						</f:if>
+						<f:if condition="{result.status.isFailed}==1">
+							<f:translate key="tx_hsquestionnaire_domain_model_status.is_failed" />
+						</f:if>
+					</td>
+				</tr>
+			</f:for>
+		</table>
+	</div>
+</f:section>

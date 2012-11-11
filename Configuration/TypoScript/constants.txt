@@ -1,0 +1,74 @@
+plugin.tx_hsquestionnaire {
+	view {
+		# cat=plugin.tx_hsquestionnaire/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:hs_questionnaire/Resources/Private/Templates/
+		# cat=plugin.tx_hsquestionnaire/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:hs_questionnaire/Resources/Private/Partials/
+		# cat=plugin.tx_hsquestionnaire/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:hs_questionnaire/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_hsquestionnaire//a; type=string; label=Default storage PID
+		storagePid =
+	}
+
+	settings {
+
+		# PDF Certificate
+		certificate {
+
+			# cat=module.tx_hsquestionnaire//a; type=string; label=Detail Pid
+			detailPid =
+
+			# cat=module.tx_hsquestionnaire//a; type=string; label=Image Resolution
+			imageResolution = 280
+
+			# cat=module.tx_hsquestionnaire//a; type=string; label=Temp Folder
+			tempFolder = uploads/tx_hsquestionnaire/
+
+			email {
+				# cat=module.tx_hsquestionnaire//a; type=string; label=Certificate E-Mail from
+				from = certificate@somewhere.local
+			}
+		}
+
+		# Excel Export
+		reporting {
+
+			tempFolder = ../uploads/tx_hsquestionnaire/
+
+			email {
+				# cat=module.tx_hsquestionnaire//a; type=string; label=E-Mail from
+				from = reporting@somewhere.local
+
+				# cat=module.tx_hsquestionnaire//a; type=string; label=E-Mail to
+				to = reporting@somewhere.local
+			}
+
+			# cat=module.tx_hsquestionnaire//a; type=string; label=Comma seperated Fe Groups
+			excludedGroups =
+		}
+
+		#
+		invite {
+			email {
+				from = invite@somewhere.local
+			}
+		}
+	}
+}
+
+module.tx_hsquestionnaire {
+	view {
+		# cat=module.tx_hsquestionnaire/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:hs_questionnaire/Resources/Private/Backend/Templates/
+		# cat=module.tx_hsquestionnaire/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:hs_questionnaire/Resources/Private/Backend/Partials/
+		# cat=module.tx_hsquestionnaire/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:hs_questionnaire/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		# cat=module.tx_hsquestionnaire//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

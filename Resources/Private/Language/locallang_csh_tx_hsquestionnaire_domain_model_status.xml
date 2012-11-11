@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_hsquestionnaire_domain_model_status</description>
+		<type>CSH</type>
+		<csh_table>tx_hsquestionnaire_domain_model_status</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="is_aborted.description">isAborted</label>
+			<label index="is_failed.description">isFailed</label>
+			<label index="is_passed.description">isPassed</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_hsquestionnaire_domain_model_questionnaire</description>
+		<type>CSH</type>
+		<csh_table>tx_hsquestionnaire_domain_model_questionnaire</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title.description">The title of the questionnaire.</label>
+			<label index="description.description">The description of the questionnaire.</label>
+			<label index="questions.description">questions</label>
+			<label index="certificate.description">The certifikat of the questionnaire.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title.description">Der Titel des Fragebogens.</label>
+			<label index="description.description">Die Beschreibung des Fragebogens.</label>
+			<label index="questions.description">Die Fragen des Fragebogens.</label>
+			<label index="certificate.description">Das dem Fragebogen zugewiesenen Zertifikat.</label>
+		</languageKey>
+	</data>
+</T3locallang>
